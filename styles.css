@@ -1,0 +1,30 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card {
+  border: none;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+}
+
+.card-body {
+  background-color: #f1f1f1;
+}
+
+input[type="text"] {
+  max-width: 400px;
+}
