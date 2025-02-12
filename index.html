@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitSearch</title>
-
-    <!-- FontAwesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -13,19 +11,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
     <div class="container mt-5">
       <!-- Heading -->
@@ -46,45 +39,33 @@
       </div>
 
       <!-- User Profile Card -->
-      <div id="userProfile" class="card text-center mt-4 d-none">
+      <div id="userProfile" class="card text-center mt-4">
         <div class="card-header">Featured User</div>
         <div class="col-md-4 mx-auto">
           <img
             id="avatar"
-            src=""
+            src="src/1697005195203.jpg"
             class="img-fluid rounded-circle avatar"
             alt="User Avatar"
           />
         </div>
         <div class="card-body">
-          <h5 id="name" class="card-title">Name</h5>
+          <h5 id="name" class="card-title">Dibbo</h5>
           <a id="profileLink" href="#" class="card-link" target="_blank"
             >GitHub Profile</a
           >
-          <p id="bio" class="card-text">
-            Bio: <span class="text-muted">N/A</span>
-          </p>
-          <p id="createdAt" class="card-text">
-            Created at: <span class="text-muted">N/A</span>
-          </p>
-          <p id="followers" class="card-text">
-            Followers: <span class="text-muted">0</span>
-          </p>
-          <p id="following" class="card-text">
-            Following: <span class="text-muted">0</span>
-          </p>
+          <p id="bio" class="card-text">Bio: Web Developer</p>
+          <p id="createdAt" class="card-text">Created at: November 19, 2023</p>
+          <p id="followers" class="card-text">Followers: 0</p>
+          <p id="following" class="card-text">Following: 2</p>
           <a id="twitterLink" href="#" class="card-link" target="_blank"
             >Twitter</a
           >
           <a id="blogLink" href="#" class="card-link" target="_blank">Blog</a>
-          <p id="viewType" class="card-text">
-            User Type: <span class="text-muted">N/A</span>
-          </p>
+          <p id="viewType" class="card-text">User Type: public</p>
         </div>
       </div>
     </div>
-
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
