@@ -38,9 +38,16 @@
         <button id="searchButton" class="btn btn-primary">Search</button>
       </div>
 
+      <p
+        class="text-center"
+        id="errorMessage"
+        style="color: red; font-weight: bold"
+        ;
+      ></p>
+
       <!-- User Profile Card -->
       <div id="userProfile" class="card text-center mt-4">
-        <div class="card-header">Featured User</div>
+        <div class="card-header" id="name">Dibbo</div>
         <div class="col-md-4 mx-auto">
           <img
             id="avatar"
@@ -50,15 +57,24 @@
           />
         </div>
         <div class="card-body">
-          <h5 id="name" class="card-title">Dibbo</h5>
-          <a id="profileLink" href="#" class="card-link" target="_blank"
-            >GitHub Profile</a
+          <a
+            id="profileLink"
+            href="https://github.com/dibyajyoti0750"
+            class="card-link"
+            target="_blank"
+            >@dibyajyoti0750</a
           >
           <p id="bio" class="card-text">Bio: Web Developer</p>
           <p id="createdAt" class="card-text">Created at: November 19, 2023</p>
+          <p id="repos" class="card-text">Repos: 22</p>
           <p id="followers" class="card-text">Followers: 0</p>
           <p id="following" class="card-text">Following: 2</p>
-          <a id="twitterLink" href="#" class="card-link" target="_blank"
+          <p id="location" class="card-text">Location: India</p>
+          <a
+            id="twitterLink"
+            href="https://x.com/Dibyajyoti0750"
+            class="card-link"
+            target="_blank"
             >Twitter</a
           >
           <a id="blogLink" href="#" class="card-link" target="_blank">Blog</a>
