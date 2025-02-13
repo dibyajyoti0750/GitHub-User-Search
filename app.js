@@ -1,5 +1,6 @@
 const btn = document.querySelector("#searchButton");
 let userNameInput = document.querySelector("#username");
+const errorMessage = document.querySelector("#errorMessage");
 
 btn.addEventListener("click", () => {
   setValues();
@@ -11,7 +12,22 @@ async function getRes(userName) {
     let res = await axios.get(url);
     return res.data;
   } catch (error) {
+    let message = "An unexpected error occurred. Please try again.";
+
+    if (error.response) {
+      if (error.response.status === 404) {
+        message = "User not found.";
+      } else if (error.response.status === 403) {
+        message = "Rate limit exceeded. Try again later.";
+      } else {
+        message = "Server error. Please try again.";
+      }
+    } else if (error.request) {
+      message = "Network error. Please check your internet connection.";
+    }
+
     console.error("Error fetching user:", error);
+    showError(message);
     return null;
   }
 }
@@ -37,11 +53,11 @@ async function setValues() {
   const twitterLink = document.querySelector("#twitterLink");
   const blogLink = document.querySelector("#blogLink");
   const viewType = document.querySelector("#viewType");
-  const errorMessage = document.querySelector("#errorMessage");
 
   if (!data) {
     if (errorMessage) {
-      errorMessage.innerText = "User not found.";
+      errorMessage.innerText =
+        "User not found or an error occurred. Please try again.";
       errorMessage.style.display = "block";
     }
     return;
@@ -108,4 +124,13 @@ function formatDate(dateString) {
     month: "long",
     day: "numeric",
   });
+}
+
+function showError(msg) {
+  if (errorMessage) {
+    errorMessage.innerText = msg;
+    errorMessage.style.display = "block";
+  } else {
+    alert(msg);
+  }
 }
