@@ -85,11 +85,13 @@ async function setValues() {
     createdAt.innerText = `Created at: ${
       formatDate(data.created_at) || "Unknown"
     }`;
-  if (repos) repos.innerText = `Repos: ${data.public_repos ?? "Not available"}`;
-  if (followers) followers.innerText = `Followers: ${data.followers ?? 0}`;
-  if (following) following.innerText = `Following: ${data.following ?? 0}`;
+  if (repos) repos.innerText = data.public_repos ?? "Not available";
+  if (followers) followers.innerText = data.followers ?? 0;
+  if (following) following.innerText = data.following ?? 0;
   if (location)
-    location.innerText = `Location: ${data.location ?? "Not available"}`;
+    location.innerHTML = `<i class="fas fa-location-dot me-2"></i> ${
+      data.location ?? "Not available"
+    }`;
 
   if (twitterLink) {
     if (data.twitter_username) {
@@ -99,17 +101,14 @@ async function setValues() {
       );
     } else {
       twitterLink.setAttribute("href", "#");
-      twitterLink.innerText = "Not available";
     }
   }
 
   if (blogLink) {
     if (data.blog) {
       blogLink.setAttribute("href", data.blog);
-      blogLink.innerText = "Visit Blog";
     } else {
       blogLink.setAttribute("href", "#");
-      blogLink.innerText = "Not available";
     }
   }
 

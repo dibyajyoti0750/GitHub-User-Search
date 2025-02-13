@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitSearch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -20,68 +26,121 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container mt-5">
-      <!-- Heading -->
-      <div class="text-center mb-4">
-        <h1>GitSearch</h1>
-        <p class="lead">Search for GitHub users by username</p>
-      </div>
+    <main>
+      <div class="container mt-5">
+        <!-- Heading -->
+        <header class="text-center mb-4">
+          <h1>GitSearch</h1>
+          <p>Search for GitHub users by username</p>
+        </header>
 
-      <!-- Search Input and Button -->
-      <div class="d-flex justify-content-center mb-4">
-        <input
-          id="username"
-          type="text"
-          class="form-control me-2"
-          placeholder="Enter GitHub username..."
-        />
-        <button id="searchButton" class="btn btn-primary">Search</button>
-      </div>
+        <!-- Search Input and Button -->
+        <section class="d-flex justify-content-center mb-4">
+          <div class="input-group">
+            <input
+              id="username"
+              type="text"
+              class="form-control rounded-start-pill px-3"
+              placeholder="Enter GitHub username..."
+            />
+            <button
+              id="searchButton"
+              class="btn btn-primary rounded-end-pill px-4"
+            >
+              Search
+            </button>
+          </div>
+        </section>
 
-      <p
-        class="text-center"
-        id="errorMessage"
-        style="color: red; font-weight: bold"
-        ;
-      ></p>
+        <!-- Error Message -->
+        <section>
+          <p
+            class="text-center"
+            id="errorMessage"
+            style="color: red; font-weight: bold"
+          ></p>
+        </section>
 
-      <!-- User Profile Card -->
-      <div id="userProfile" class="card text-center mt-4">
-        <div class="card-header" id="name">Dibbo</div>
-        <div class="col-md-4 mx-auto">
-          <img
-            id="avatar"
-            src="src/1697005195203.jpg"
-            class="img-fluid rounded-circle avatar"
-            alt="User Avatar"
-          />
-        </div>
-        <div class="card-body">
-          <a
-            id="profileLink"
-            href="https://github.com/dibyajyoti0750"
-            class="card-link"
-            target="_blank"
-            >@dibyajyoti0750</a
-          >
-          <p id="bio" class="card-text">Bio: Web Developer</p>
-          <p id="createdAt" class="card-text">Created at: November 19, 2023</p>
-          <p id="repos" class="card-text">Repos: 22</p>
-          <p id="followers" class="card-text">Followers: 0</p>
-          <p id="following" class="card-text">Following: 2</p>
-          <p id="location" class="card-text">Location: India</p>
-          <a
-            id="twitterLink"
-            href="https://x.com/Dibyajyoti0750"
-            class="card-link"
-            target="_blank"
-            >Twitter</a
-          >
-          <a id="blogLink" href="#" class="card-link" target="_blank">Blog</a>
-          <p id="viewType" class="card-text">User Type: public</p>
-        </div>
+        <!-- User Profile Card -->
+        <section id="userProfile" class="card mt-4">
+          <div class="card-header text-center" id="name">Dibbo</div>
+          <div class="card-body">
+            <div class="row align-items-center">
+              <!-- Avatar Column -->
+              <div class="col-md-3 text-center mb-3 mb-md-0">
+                <img
+                  id="avatar"
+                  src="src/1697005195203.jpg"
+                  class="img-fluid rounded-circle avatar"
+                  alt="User Avatar"
+                />
+              </div>
+
+              <!-- User Details Column -->
+              <div class="col-md-9">
+                <div class="d-flex justify-content-between flex-wrap">
+                  <h5>
+                    <a
+                      id="profileLink"
+                      href="https://github.com/dibyajyoti0750"
+                      class="card-link"
+                      target="_blank"
+                      >@dibyajyoti0750</a
+                    >
+                  </h5>
+                  <p id="createdAt" class="mb-2">Joined: November 19, 2023</p>
+                </div>
+                <p id="bio" class="mb-3">Bio: Web Developer</p>
+
+                <!-- Stats Row -->
+                <div class="row text-start mb-3 stats">
+                  <div class="col">
+                    <small>Repos</small>
+                    <h4 id="repos" class="mb-0">22</h4>
+                  </div>
+                  <div class="col">
+                    <small>Followers</small>
+                    <h4 id="followers" class="mb-0">0</h4>
+                  </div>
+                  <div class="col">
+                    <small>Following</small>
+                    <h4 id="following" class="mb-0">2</h4>
+                  </div>
+                </div>
+
+                <!-- Additional Info Row -->
+                <div class="row">
+                  <div class="col-12 col-md-6 mb-2">
+                    <p id="location" class="mb-0">
+                      <i class="fas fa-location-dot me-2"></i> India
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-6 mb-2">
+                    <a
+                      id="twitterLink"
+                      href="https://x.com/Dibyajyoti0750"
+                      target="_blank"
+                      class="card-link"
+                    >
+                      <i class="fa-brands fa-x-twitter me-2"></i> Twitter
+                    </a>
+                  </div>
+                  <div class="col-12 col-md-6 mb-2">
+                    <a id="blogLink" href="#" target="_blank" class="card-link">
+                      <i class="fas fa-link me-2"></i> Website
+                    </a>
+                  </div>
+                  <p id="viewType" class="col-12 col-md-6 mb-2">
+                    User Type: public
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
+    </main>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
