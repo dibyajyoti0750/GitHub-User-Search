@@ -80,11 +80,9 @@ async function setValues() {
     profileLink.innerText = `@${data.login ?? "Not available"}`;
   }
 
-  if (bio) bio.innerText = `Bio: ${data.bio ?? "Not available"}`;
+  if (bio) bio.innerText = data.bio ?? "Not available";
   if (createdAt)
-    createdAt.innerText = `Created at: ${
-      formatDate(data.created_at) || "Unknown"
-    }`;
+    createdAt.innerText = `Joined ${formatDate(data.created_at) || "Unknown"}`;
   if (repos) repos.innerText = data.public_repos ?? "Not available";
   if (followers) followers.innerText = data.followers ?? 0;
   if (following) following.innerText = data.following ?? 0;
